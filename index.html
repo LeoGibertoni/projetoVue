@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="vue.min.js"></script>
 </head>
@@ -46,10 +47,12 @@
                         <th>Classe</th>
                         <th>Episódios</th>
                         <th>Ano</th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="anime in listaAnimes">
+                    <tr v-for="(anime, index) in listaAnimes">
                         <td>{{ anime.id }}</td>
                         <td>{{ anime.nome }}</td>
                         <td>{{ anime.editora }}</td>
@@ -57,6 +60,8 @@
                         <td>{{ anime.classe }}</td>
                         <td>{{ anime.ep }}</td>
                         <td>{{ anime.ano }}</td>
+                        <td><a href="#" style="color: white;" @click="alterar(index)"><i class="fa-solid fa-pen"></a></i></td>
+                        <td><a href="#" style="color: white;" @click="excluir(index)"><i class="fa-solid fa-trash"></i></a></td>
                     </tr>
                 </tbody>                
             </table>
